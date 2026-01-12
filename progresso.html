@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Meu Progresso | DevLearn</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .progress-box {
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 30px;
+      background: #f8fafc;
+      border-radius: 20px;
+    }
+
+    body.dark .progress-box {
+      background: #020617;
+      color: white;
+    }
+
+    .bar {
+      background: #e5e7eb;
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 10px 0 20px;
+    }
+
+    .bar div {
+      height: 20px;
+      background: #22c55e;
+      width: 0%;
+      transition: width 0.5s;
+    }
+
+    .course {
+      margin-bottom: 30px;
+    }
+
+    .done {
+      text-decoration: line-through;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="logo">DevLearn</div>
+  <button class="hamburger" id="hamburger">☰</button>
+  <nav class="topnav" id="mobileMenu">
+    <a href="index.html">Início</a>
+    <a href="html.html">HTML</a>
+    <a href="css.html">CSS</a>
+    <a href="js.html">JavaScript</a>
+    <a href="projetos.html">Projetos</a>
+    <a href="progresso.html">Progresso</a>
+    <a href="perfil.html">Perfil</a>
+    <a href="editor-avancado.html">Editor</a>
+  </nav>
+</header>
+
+<main>
+  <h1>📊 Meu Progresso</h1>
+
+  <div class="progress-box">
+
+    <div class="course" data-course="html">
+      <h3>HTML</h3>
+      <label><input type="checkbox" data-progress="html-intro"> Introdução</label><br>
+      <label><input type="checkbox" data-progress="html-tags"> Tags Básicas</label>
+      <div class="bar"><div></div></div>
+    </div>
+
+    <div class="course" data-course="css">
+      <h3>CSS</h3>
+      <label><input type="checkbox" data-progress="css-colors"> Cores</label><br>
+      <label><input type="checkbox" data-progress="css-layout"> Layout</label>
+      <div class="bar"><div></div></div>
+    </div>
+
+    <div class="course" data-course="js">
+      <h3>JavaScript</h3>
+      <label><input type="checkbox" data-progress="js-events"> Eventos</label><br>
+      <label><input type="checkbox" data-progress="js-dom"> DOM</label>
+      <div class="bar"><div></div></div>
+    </div>
+
+  </div>
+</main>
+
+<footer>© DevLearn</footer>
+
+<script>
+const checks = document.querySelectorAll('input[type="checkbox"]');
+
+checks.forEach(check => {
+  const saved = localStorage.getItem(check.dataset.progress);
+  if (saved === 'true') check.checked = true;
+
+  check.addEventListener('change', () => {
+    localStorage.setItem(check.dataset.progress, check.checked);
+    updateProgress();
+  });
+});
+
+function updateProgress() {
+  document.querySelectorAll('.course').forEach(course => {
+    const boxes = course.querySelectorAll('input');
+    const done = course.querySelectorAll('input:checked').length;
+    const percent = Math.round((done / boxes.length) * 100);
+    course.querySelector('.bar div').style.width = percent + '%';
+
+    if (percent === 100) {
+      localStorage.setItem('curso-concluido', 'true');
+    }
+  });
+}
+
+updateProgress();
+</script>
+
+</body>
+</html>
