@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Projeto 1 | Página Pessoal – DevLearn</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+  <style>
+    .project-box {
+      background: #f8fafc;
+      padding: 20px;
+      border-radius: 12px;
+      margin: 20px 0;
+    }
+
+    body.dark .project-box {
+      background: #1e293b;
+    }
+
+    .code-box {
+      background: #0f172a;
+      color: #e5e7eb;
+      padding: 15px;
+      border-radius: 10px;
+      overflow-x: auto;
+      font-family: monospace;
+      margin: 12px 0;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 16px;
+      background: #3b82f6;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="logo">DevLearn</div>
+
+  <button class="hamburger" id="hamburger">☰</button>
+
+  <nav class="topnav" id="mobileMenu">
+    <a href="index.html">Início</a>
+    <a href="html.html">HTML</a>
+    <a href="css.html">CSS</a>
+    <a href="js.html">JavaScript</a>
+    <a href="projetos.html">Projetos</a>
+    <a href="pesquisa.html">Pesquisa</a>
+  </nav>
+</header>
+
+
+<main>
+  <h1>Projeto Guiado 1: Página Pessoal</h1>
+  <p>Neste projeto vais criar a tua primeira página web completa.</p>
+
+  <div class="project-box">
+    <h2>🎯 Objetivo</h2>
+    <p>Criar uma página pessoal usando HTML e CSS.</p>
+  </div>
+
+  <div class="project-box">
+    <h2>🧱 Estrutura HTML</h2>
+    <div class="code-box">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Minha Página&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Olá, eu sou...&lt;/h1&gt;
+  &lt;p&gt;Sou estudante de programação.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </div>
+  </div>
+
+  <div class="project-box">
+    <h2>🎨 Estilo CSS</h2>
+    <div class="code-box">
+body {
+  font-family: Arial;
+  background: #f1f5f9;
+  padding: 20px;
+}
+
+h1 {
+  color: #2563eb;
+}
+    </div>
+  </div>
+
+  <div class="project-box">
+    <h2>🏆 Desafio</h2>
+    <ul>
+      <li>Adicionar uma imagem</li>
+      <li>Criar uma lista de hobbies</li>
+      <li>Mudar as cores</li>
+    </ul>
+  </div>
+
+  <a href="editor.html" class="btn">Testar no Editor</a>
+</main>
+
+<footer>© DevLearn</footer>
+
+</body>
+</html>

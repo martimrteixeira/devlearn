@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Projeto 3 | To‑Do List – DevLearn</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+  <style>
+    .todo-box {
+      max-width: 500px;
+      margin: 40px auto;
+      background: #f8fafc;
+      padding: 20px;
+      border-radius: 16px;
+    }
+
+    body.dark .todo-box {
+      background: #1e293b;
+    }
+
+    .todo-box input {
+      width: 70%;
+      padding: 10px;
+    }
+
+    .todo-box button {
+      padding: 10px 14px;
+      background: #3b82f6;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px;
+      border-bottom: 1px solid #cbd5e1;
+    }
+
+    li button {
+      background: red;
+      padding: 4px 8px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="logo">DevLearn</div>
+
+  <button class="hamburger" id="hamburger">☰</button>
+
+  <nav class="topnav" id="mobileMenu">
+    <a href="index.html">Início</a>
+    <a href="html.html">HTML</a>
+    <a href="css.html">CSS</a>
+    <a href="js.html">JavaScript</a>
+    <a href="projetos.html">Projetos</a>
+    <a href="pesquisa.html">Pesquisa</a>
+  </nav>
+</header>
+
+
+<main>
+  <h1>Projeto Guiado 3: To‑Do List</h1>
+  <p>Neste projeto vais aprender a usar JavaScript para criar interatividade.</p>
+
+  <div class="todo-box">
+    <input type="text" id="taskInput" placeholder="Nova tarefa">
+    <button onclick="addTask()">Adicionar</button>
+
+    <ul id="taskList"></ul>
+  </div>
+
+  <div class="box">
+    <h3>🏆 Desafio</h3>
+    <ul>
+      <li>Guardar tarefas no navegador</li>
+      <li>Marcar tarefa como concluída</li>
+      <li>Adicionar contador de tarefas</li>
+    </ul>
+  </div>
+</main>
+
+<footer>© DevLearn</footer>
+
+<script>
+const input = document.getElementById("taskInput");
+const list = document.getElementById("taskList");
+
+function saveTasks() {
+  const tasks = [];
+  document.querySelectorAll("#taskList li span").forEach(span => {
+    tasks.push({
+      text: span.textContent,
+      done: span.classList.contains("done")
+    });
+  });
+  localStorage.setItem("devlearn-tasks", JSON.stringify(tasks));
+}
+
+function loadTasks() {
+  const saved = JSON.parse(localStorage.getItem("devlearn-tasks") || "[]");
+  saved.forEach(task => createTask(task.text, task.done));
+}
+
+function createTask(text, done = false) {
+  const li = document.createElement("li");
+
+  const span = document.createElement("span");
+  span.textContent = text;
+  if (done) span.classList.add("done");
+
+  span.onclick = () => {
+    span.classList.toggle("done");
+    saveTasks();
+  };
+
+  const btn = document.createElement("button");
+  btn.textContent = "X";
+  btn.onclick = () => {
+    li.remove();
+    saveTasks();
+  };
+
+  li.appendChild(span);
+  li.appendChild(btn);
+  list.appendChild(li);
+}
+
+function addTask() {
+  if (input.value === "") return;
+  createTask(input.value);
+  input.value = "";
+  saveTasks();
+}
+
+loadTasks();
+</script>
+
+</body>
+</html>

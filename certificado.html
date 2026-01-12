@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Certificado | DevLearn</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+  <style>
+    .certificate {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 40px;
+      border: 6px solid #2563eb;
+      border-radius: 20px;
+      text-align: center;
+      background: #f8fafc;
+    }
+
+    body.dark .certificate {
+      background: #020617;
+      color: white;
+    }
+
+    .certificate h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .certificate p {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+
+    .certificate strong {
+      font-size: 22px;
+    }
+
+    .btn {
+      margin-top: 30px;
+      padding: 12px 20px;
+      background: #3b82f6;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="logo">DevLearn</div>
+
+  <button class="hamburger" id="hamburger">☰</button>
+
+  <nav class="topnav" id="mobileMenu">
+    <a href="index.html">Início</a>
+    <a href="html.html">HTML</a>
+    <a href="css.html">CSS</a>
+    <a href="js.html">JavaScript</a>
+    <a href="projetos.html">Projetos</a>
+    <a href="pesquisa.html">Pesquisa</a>
+  </nav>
+</header>
+
+
+<main>
+  <div class="certificate" id="certificate">
+    <h1>Certificado de Conclusão</h1>
+    <p>Este certificado confirma que</p>
+    <p><strong id="studentName">Aluno</strong></p>
+    <p>concluiu com sucesso o curso</p>
+    <p><strong>Fundamentos de Desenvolvimento Web</strong></p>
+    <p id="date"></p>
+
+    <button class="btn" onclick="window.print()">Imprimir / Guardar PDF</button>
+  </div>
+</main>
+
+<footer>© DevLearn</footer>
+
+<script>
+// NOME DO ALUNO
+let nome = localStorage.getItem("devlearn-nome");
+if (!nome) {
+  nome = prompt("Qual é o teu nome para o certificado?");
+  localStorage.setItem("devlearn-nome", nome);
+}
+
+document.getElementById("studentName").textContent = nome;
+
+// DATA
+const hoje = new Date();
+document.getElementById("date").textContent =
+  "Emitido em " + hoje.toLocaleDateString();
+</script>
+
+</body>
+</html>

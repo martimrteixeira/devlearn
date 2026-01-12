@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Pesquisa | DevLearn</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+  <style>
+    .search-box {
+      max-width: 600px;
+      margin: 30px auto;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+    }
+
+    .result {
+      border-bottom: 1px solid #cbd5e1;
+      padding: 12px 0;
+    }
+
+    .result a {
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .result p {
+      margin: 6px 0 0;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="logo">DevLearn</div>
+
+  <button class="hamburger" id="hamburger">☰</button>
+
+  <nav class="topnav" id="mobileMenu">
+    <a href="index.html">Início</a>
+    <a href="html.html">HTML</a>
+    <a href="css.html">CSS</a>
+    <a href="js.html">JavaScript</a>
+    <a href="projetos.html">Projetos</a>
+    <a href="pesquisa.html">Pesquisa</a>
+  </nav>
+</header>
+
+
+<main>
+  <h1>Pesquisa Global</h1>
+  <p>Procura por aulas, conceitos ou exemplos.</p>
+
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Pesquisar...">
+  </div>
+
+  <div id="results"></div>
+</main>
+
+<footer>© DevLearn</footer>
+
+<script src="js/app.js"></script>
+<script>
+const conteudos = [
+  {
+    titulo: "Introdução ao HTML",
+    descricao: "Aprende o que é HTML e como estruturar páginas web.",
+    link: "html.html#intro"
+  },
+  {
+    titulo: "Tags Básicas HTML",
+    descricao: "h1, p, strong, listas e mais.",
+    link: "html.html#tags"
+  },
+  {
+    titulo: "Introdução ao CSS",
+    descricao: "Estilos, cores e layout das páginas.",
+    link: "css.html#intro"
+  },
+  {
+    titulo: "Box Model",
+    descricao: "Margin, padding, border e content.",
+    link: "css.html#boxmodel"
+  },
+  {
+    titulo: "Introdução ao JavaScript",
+    descricao: "Interatividade com JavaScript.",
+    link: "js.html#intro"
+  },
+  {
+    titulo: "DOM",
+    descricao: "Manipulação de elementos HTML.",
+    link: "js.html#dom"
+  },
+  {
+    titulo: "Editor Avançado",
+    descricao: "Testa HTML, CSS e JavaScript em tempo real.",
+    link: "editor.html"
+  }
+];
+
+const input = document.getElementById("searchInput");
+const results = document.getElementById("results");
+
+input.addEventListener("input", () => {
+  const termo = input.value.toLowerCase();
+  results.innerHTML = "";
+
+  if (termo.length === 0) return;
+
+  const filtrados = conteudos.filter(item =>
+    item.titulo.toLowerCase().includes(termo) ||
+    item.descricao.toLowerCase().includes(termo)
+  );
+
+  if (filtrados.length === 0) {
+    results.innerHTML = "<p>Nenhum resultado encontrado.</p>";
+    return;
+  }
+
+  filtrados.forEach(item => {
+    const div = document.createElement("div");
+    div.className = "result";
+    div.innerHTML = `
+      <a href="${item.link}">${item.titulo}</a>
+      <p>${item.descricao}</p>
+    `;
+    results.appendChild(div);
+  });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Curso CSS | DevLearn</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="logo">DevLearn</div>
+
+  <button class="hamburger" id="hamburger">☰</button>
+
+  <nav class="topnav" id="mobileMenu">
+    <a href="index.html">Início</a>
+    <a href="html.html">HTML</a>
+    <a href="css.html">CSS</a>
+    <a href="js.html">JavaScript</a>
+    <a href="projetos.html">Projetos</a>
+    <a href="pesquisa.html">Pesquisa</a>
+  </nav>
+</header>
+
+
+<div class="container">
+
+  <nav>
+    <h3>CSS Curso</h3>
+    <a href="#intro">Introdução</a>
+    <a href="#sintaxe">Sintaxe CSS</a>
+    <a href="#cores">Cores</a>
+    <a href="#fontes">Fontes</a>
+    <a href="#boxmodel">Box Model</a>
+    <a href="#layout">Layout</a>
+    <a href="#exercicio">Exercício</a>
+  </nav>
+
+  <main>
+
+    <section id="intro">
+      <h1>Introdução ao CSS</h1>
+      <div class="progress-container">
+  <div class="progress-bar" id="progressBar"></div>
+</div>
+
+<p id="progressText">Progresso: 0%</p>
+
+      <p>
+        CSS (Cascading Style Sheets) é a linguagem usada para definir o visual das páginas web.
+        Com CSS controlas cores, tamanhos, espaçamentos e layouts.
+      </p>
+
+      <div class="box">
+        HTML cria a estrutura, CSS cria o estilo.
+      </div>
+    </section>
+
+    <section id="sintaxe">
+      <h2>Sintaxe básica do CSS</h2>
+      <p>Um estilo CSS é composto por seletor, propriedade e valor:</p>
+
+      <pre>
+seletor {
+  propriedade: valor;
+}
+      </pre>
+    </section>
+
+    <section id="cores">
+      <h2>Cores</h2>
+      <p>As cores podem ser definidas por nome, hexadecimal ou RGB:</p>
+
+      <pre>
+color: red;
+color: #2563eb;
+color: rgb(37, 99, 235);
+      </pre>
+    </section>
+
+    <section id="fontes">
+      <h2>Fontes</h2>
+      <p>Exemplo de propriedades para texto:</p>
+
+      <pre>
+font-family: Arial;
+font-size: 18px;
+font-weight: bold;
+      </pre>
+    </section>
+
+    <section id="boxmodel">
+      <h2>Box Model</h2>
+      <p>Todo elemento HTML é uma caixa composta por:</p>
+      <ul>
+        <li>Content</li>
+        <li>Padding</li>
+        <li>Border</li>
+        <li>Margin</li>
+      </ul>
+    </section>
+
+    <section id="layout">
+      <h2>Layout</h2>
+      <p>CSS permite criar layouts com:</p>
+      <ul>
+        <li>display: block / inline</li>
+        <li>flexbox</li>
+        <li>grid</li>
+      </ul>
+
+      <pre>
+display: flex;
+justify-content: center;
+align-items: center;
+      </pre>
+    </section>
+
+    <section id="exercicio">
+      <h2>Exercício prático</h2>
+      <p>Altera a cor e o tamanho do texto:</p>
+
+      <textarea id="codigo">&lt;style&gt;
+h1 {
+  color: blue;
+  font-size: 32px;
+}
+&lt;/style&gt;
+
+&lt;h1&gt;CSS é poderoso!&lt;/h1&gt;</textarea>
+
+      <button onclick="executarCodigo()">Executar código</button>
+
+      <iframe id="resultado"></iframe>
+
+    <div class="box">
+  <label>
+    <input type="checkbox" data-progress="css-basico">
+    Aula de CSS concluída
+  </label>
+</div>
+
+</div>
+
+    </section>
+
+  </main>
+
+</div>
+
+<footer>
+  Curso CSS © DevLearn
+</footer>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
