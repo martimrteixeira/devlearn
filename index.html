@@ -2,89 +2,70 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
-  <title>DevLearn | Aprende Programação</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<link rel="stylesheet" href="style.css">
-
+  <title>DevLearn | Aprende Web do Zero</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<script src="js/app.js"></script>
-
 <body>
 
 <header class="topbar">
-  <div class="logo">DevLearn</div>
-
-  <button class="hamburger" id="hamburger">☰</button>
-
-  <nav class="topnav" id="mobileMenu">
-    <a href="index.html">Início</a>
-    <a href="html.html">HTML</a>
-    <a href="css.html">CSS</a>
-    <a href="js.html">JavaScript</a>
-    <a href="projetos.html">Projetos</a>
-    <a href="pesquisa.html">Pesquisa</a>
-    <a href="progresso.html">Progresso</a>
-    <a href="perfil.html">Perfil</a>
-    <a href="editor-avancado.html">Editor</a>
-  </nav>
+  <h1>DevLearn</h1>
+  <button id="hamburger" class="hamburger">☰</button>
 </header>
-
 
 <div class="container">
 
-  <nav>
-    <h3>Começar</h3>
-    <a href="#">Introdução</a>
-    <a href="#">Como usar o site</a>
+  <!-- SIDEBAR -->
+  <nav class="sidebar" id="sidebar">
+    <h4>COMEÇAR</h4>
+    <a href="index.html">Início</a>
+    <a href="roadmap.html">Roadmap</a>
 
-    <h3>HTML</h3>
-    <a href="#">HTML Básico</a>
-    <a href="#">Elementos</a>
-    <a href="#">Links e Imagens</a>
+    <h4>CURSOS</h4>
+    <a href="html.html">HTML</a>
+    <a href="css.html">CSS</a>
+    <a href="js.html">JavaScript</a>
 
-    <h3>CSS</h3>
-    <a href="#">CSS Básico</a>
-    <a href="#">Cores</a>
-    <a href="#">Layouts</a>
+    <h4>PRÁTICA</h4>
+    <a href="editor-avancado.html">Editor</a>
+    <a href="projetos.html">Projetos</a>
 
-    <h3>JavaScript</h3>
-    <a href="#">JS Básico</a>
-    <a href="#">Eventos</a>
+    <h4>UTILIZADOR</h4>
+    <a href="progresso.html">Progresso</a>
+    <a href="perfil.html">Perfil</a>
+    <a href="certificado.html">Certificado</a>
+
+    <h4>EXTRAS</h4>
+    <a href="pesquisa.html">Pesquisa</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="contacto.html">Contacto</a>
   </nav>
 
-  <main>
-    <h1>Introdução ao HTML</h1>
-    <p>
-      HTML é a linguagem usada para estruturar o conteúdo de páginas web.
-      Com ela, conseguimos criar textos, imagens, links, listas e muito mais.
-    </p>
+  <!-- CONTEÚDO -->
+  <main class="content">
 
-    <div class="box">
-      <strong>Dica:</strong> HTML não é linguagem de programação, é uma linguagem de marcação.
-    </div>
+    <section>
+      <h1>Bem-vindo ao DevLearn 🚀</h1>
+      <p>Aprende HTML, CSS e JavaScript passo a passo, com exemplos práticos e editor integrado.</p>
+    </section>
 
-    <h2>Exemplo simples</h2>
-    <p>Escreve HTML abaixo e clica em <b>Executar</b>:</p>
+    <section>
+      <h2>O que vais aprender</h2>
+      <ul>
+        <li>Estrutura de páginas com HTML</li>
+        <li>Estilização com CSS</li>
+        <li>Interatividade com JavaScript</li>
+      </ul>
+    </section>
 
-    <textarea id="codigo">&lt;h1&gt;Olá Mundo&lt;/h1&gt;
-&lt;p&gt;Este é o meu primeiro código HTML.&lt;/p&gt;</textarea>
+    <section>
+      <h2>Começa agora</h2>
+      <a class="btn" href="html.html">👉 Começar com HTML</a>
+    </section>
 
-    <button onclick="executarCodigo()">Executar código</button>
-
-    <iframe id="resultado"></iframe>
   </main>
-
 </div>
 
-<footer>
-  © 2026 DevLearn • Conteúdo educacional original
-</footer>
-
-
-
+<script src="app.js"></script>
 </body>
-
 </html>
-
-

@@ -2,169 +2,57 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
-  <title>Curso HTML | DevLearn</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
+  <title>HTML | DevLearn</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="topbar">
-  <div class="logo">DevLearn</div>
-
-  <button class="hamburger" id="hamburger">☰</button>
-
-  <nav class="topnav" id="mobileMenu">
-    <a href="index.html">Início</a>
-    <a href="html.html">HTML</a>
-    <a href="css.html">CSS</a>
-    <a href="js.html">JavaScript</a>
-    <a href="projetos.html">Projetos</a>
-    <a href="pesquisa.html">Pesquisa</a>
-    <a href="progresso.html">Progresso</a>
-    <a href="perfil.html">Perfil</a>
-    <a href="editor-avancado.html">Editor</a>
-  </nav>
+  <h1>DevLearn</h1>
 </header>
 
-
 <div class="container">
-
-  <nav>
-    <h3>HTML Curso</h3>
+  <nav class="sidebar">
+    <h4>COMEÇAR</h4>
     <a href="#intro">Introdução</a>
-    <a href="#estrutura">Estrutura HTML</a>
-    <a href="#tags">Tags Básicas</a>
-    <a href="#links">Links</a>
-    <a href="#imagens">Imagens</a>
-    <a href="#listas">Listas</a>
-    <a href="#exercicio">Exercício</a>
+    <a href="#usar-site">Como usar o site</a>
+
+    <h4>HTML</h4>
+    <a href="#html-basico">HTML Básico</a>
+    <a href="#elementos">Elementos</a>
+    <a href="#links-imagens">Links e Imagens</a>
   </nav>
-  <button id="themeToggle" class="theme-btn">🌙</button>
 
-
-  <main>
+  <main class="content">
 
     <section id="intro">
       <h1>Introdução ao HTML</h1>
-      <div class="progress-container">
-  <div class="progress-bar" id="progressBar"></div>
-</div>
-<label>
-  <input type="checkbox" data-progress="html-intro">
-  Introdução concluída
-</label>
-
-<label>
-  <input type="checkbox" data-progress="html-tags">
-  Tags básicas concluídas
-</label>
-
-
-<p id="progressText">Progresso: 0%</p>
-
-      <p>
-        HTML (HyperText Markup Language) é a linguagem usada para criar a estrutura
-        de páginas web. Com HTML, defines textos, imagens, botões, links e muito mais.
-      </p>
-
-      <div class="box">
-        HTML é uma linguagem de marcação, não é linguagem de programação.
-      </div>
+      <p>HTML é a linguagem usada para estruturar páginas web.</p>
     </section>
 
-    <section id="estrutura">
-      <h2>Estrutura básica de um documento HTML</h2>
-      <p>Todo ficheiro HTML segue esta estrutura:</p>
-
-      <pre>
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;title&gt;Título da página&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    Conteúdo visível
-  &lt;/body&gt;
-&lt;/html&gt;
-      </pre>
+    <section id="usar-site">
+      <h2>Como usar o site</h2>
+      <p>Lê os conteúdos, pratica no editor e marca o progresso.</p>
     </section>
 
-    <section id="tags">
-      <h2>Tags básicas</h2>
-      <ul>
-        <li><b>&lt;h1&gt; a &lt;h6&gt;</b> – títulos</li>
-        <li><b>&lt;p&gt;</b> – parágrafos</li>
-        <li><b>&lt;br&gt;</b> – quebra de linha</li>
-        <li><b>&lt;strong&gt;</b> – texto forte</li>
-      </ul>
-      <div class="box">
-  <label>
-    <input type="checkbox" data-progress="html-tags">
-    Tags básicas concluídas
-  </label>
-</div>
-
+    <section id="html-basico">
+      <h2>HTML Básico</h2>
+      <p>HTML usa tags para criar conteúdo.</p>
     </section>
 
-    <section id="links">
-      <h2>Links</h2>
-      <p>Links permitem navegar entre páginas:</p>
-
-      <pre>
-&lt;a href="https://exemplo.com"&gt;Visitar site&lt;/a&gt;
-      </pre>
+    <section id="elementos">
+      <h2>Elementos HTML</h2>
+      <p>Exemplos de elementos: h1, p, img, a.</p>
     </section>
 
-    <section id="imagens">
-      <h2>Imagens</h2>
-      <p>Para mostrar imagens usamos a tag <b>&lt;img&gt;</b>:</p>
-
-      <pre>
-&lt;img src="imagem.jpg" alt="Descrição da imagem"&gt;
-      </pre>
-    </section>
-
-    <section id="listas">
-      <h2>Listas</h2>
-      <p>Existem listas ordenadas e não ordenadas:</p>
-
-      <pre>
-&lt;ul&gt;
-  &lt;li&gt;Item 1&lt;/li&gt;
-  &lt;li&gt;Item 2&lt;/li&gt;
-&lt;/ul&gt;
-      </pre>
-    </section>
-
-    <section id="exercicio">
-      <h2>Exercício prático</h2>
-      <p>Cria um título e um parágrafo e executa:</p>
-
-      <textarea id="codigo">&lt;h1&gt;O meu site&lt;/h1&gt;
-&lt;p&gt;Aprender HTML é simples!&lt;/p&gt;</textarea>
-
-      <button onclick="executarCodigo()">Executar código</button>
-
-      <iframe id="resultado"></iframe>
-
-      <div class="box">
-  <label>
-    <input type="checkbox" data-progress="html-intro">
-    Marcar aula como concluída
-  </label>
-</div>
-
+    <section id="links-imagens">
+      <h2>Links e Imagens</h2>
+      <p>Usa &lt;a&gt; para links e &lt;img&gt; para imagens.</p>
     </section>
 
   </main>
-
 </div>
 
-<footer>
-  Curso HTML © DevLearn
-</footer>
-
-<script src="js/app.js"></script>
-
+<script src="app.js"></script>
 </body>
 </html>

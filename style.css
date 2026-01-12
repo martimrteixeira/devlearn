@@ -9,13 +9,7 @@ body {
   color: #333;
 }
 
-header {
-  background: #1e293b;
-  color: white;
-  padding: 16px;
-  font-size: 22px;
-  font-weight: bold;
-}
+
 
 .container {
   display: flex;
@@ -108,11 +102,7 @@ footer {
   padding: 14px 24px;
 }
 
-.logo {
-  color: white;
-  font-size: 22px;
-  font-weight: bold;
-}
+
 
 .topnav a {
   color: #e5e7eb;
@@ -201,14 +191,7 @@ body.dark .progress-container {
 }
 
 
-.topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 20px;
-  background: #020617;
-  position: relative;
-}
+
 
 .logo {
   color: white;
@@ -216,11 +199,7 @@ body.dark .progress-container {
   font-weight: bold;
 }
 
-.topnav a {
-  color: #e5e7eb;
-  text-decoration: none;
-  margin-left: 16px;
-}
+
 
 .hamburger {
   display: none;
@@ -254,10 +233,7 @@ body.dark .progress-container {
     background: #1e293b;
   }
 
-  .topnav a {
-    padding: 10px;
-    margin: 0;
-  }
+  
 
   .topnav.show {
     display: flex;

@@ -2,143 +2,37 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
-  <title>Curso JavaScript | DevLearn</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
+  <title>JavaScript | DevLearn</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="topbar">
-  <div class="logo">DevLearn</div>
-
-  <button class="hamburger" id="hamburger">☰</button>
-
-  <nav class="topnav" id="mobileMenu">
-    <a href="index.html">Início</a>
-    <a href="html.html">HTML</a>
-    <a href="css.html">CSS</a>
-    <a href="js.html">JavaScript</a>
-    <a href="projetos.html">Projetos</a>
-    <a href="pesquisa.html">Pesquisa</a>
-    <a href="progresso.html">Progresso</a>
-    <a href="perfil.html">Perfil</a>
-    <a href="editor-avancado.html">Editor</a>
-  </nav>
+  <h1>DevLearn</h1>
 </header>
 
-
 <div class="container">
-
-  <nav>
-    <h3>JavaScript Curso</h3>
-    <a href="#intro">Introdução</a>
-    <a href="#variaveis">Variáveis</a>
-    <a href="#funcoes">Funções</a>
+  <nav class="sidebar">
+    <h4>JavaScript</h4>
+    <a href="#js-basico">JS Básico</a>
     <a href="#eventos">Eventos</a>
-    <a href="#dom">DOM</a>
-    <a href="#exercicio">Exercício</a>
   </nav>
-  <button id="themeToggle" class="theme-btn">🌙</button>
 
+  <main class="content">
 
-  <main>
-
-    <section id="intro">
-      <h1>Introdução ao JavaScript</h1>
-      <div class="progress-container">
-  <div class="progress-bar" id="progressBar"></div>
-</div>
-
-<p id="progressText">Progresso: 0%</p>
-
-      <p>
-        JavaScript é a linguagem responsável pela interatividade das páginas web.
-        Com ela podes criar animações, validar formulários e reagir a ações do utilizador.
-      </p>
-
-      <div class="box">
-        HTML estrutura, CSS estiliza, JavaScript dá vida ao site.
-      </div>
-    </section>
-
-    <section id="variaveis">
-      <h2>Variáveis</h2>
-      <p>Variáveis servem para guardar valores:</p>
-
-      <pre>
-let nome = "Ana";
-const idade = 20;
-      </pre>
-    </section>
-
-    <section id="funcoes">
-      <h2>Funções</h2>
-      <p>Funções executam ações reutilizáveis:</p>
-
-      <pre>
-function somar(a, b) {
-  return a + b;
-}
-      </pre>
+    <section id="js-basico">
+      <h1>JavaScript Básico</h1>
+      <p>JavaScript adiciona interatividade ao site.</p>
     </section>
 
     <section id="eventos">
       <h2>Eventos</h2>
-      <p>Eventos reagem a ações do utilizador:</p>
-
-      <pre>
-<button onclick="alert('Olá!')">Clicar</button>
-      </pre>
-    </section>
-
-    <section id="dom">
-      <h2>DOM</h2>
-      <p>O DOM permite manipular elementos HTML:</p>
-
-      <pre>
-document.getElementById("titulo").innerText = "Novo texto";
-      </pre>
-    </section>
-
-    <section id="exercicio">
-      <h2>Exercício prático</h2>
-      <p>Clica no botão para mudar o texto:</p>
-
-      <textarea id="codigo">&lt;h1 id="titulo"&gt;Texto original&lt;/h1&gt;
-
-&lt;button onclick="mudarTexto()"&gt;Mudar texto&lt;/button&gt;
-
-&lt;script&gt;
-function mudarTexto() {
-  document.getElementById("titulo").innerText = "Texto alterado!";
-}
-&lt;/script&gt;</textarea>
-
-      <button onclick="executarCodigo()">Executar código</button>
-
-      <iframe id="resultado"></iframe>
-
-  
- <div class="box">
-  <label>
-    <input type="checkbox" data-progress="js-basico">
-    Aula de JavaScript concluída
-  </label>
-</div>
-
-</div>
-
+      <p>Eventos reagem a ações do utilizador.</p>
     </section>
 
   </main>
-
 </div>
 
-<footer>
-  Curso JavaScript © DevLearn
-</footer>
-
-<script src="js/app.js"></script>
-
+<script src="app.js"></script>
 </body>
 </html>
